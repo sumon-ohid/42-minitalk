@@ -6,7 +6,7 @@
 /*   By: msumon <msumon@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:57:52 by sumon             #+#    #+#             */
-/*   Updated: 2023/11/16 21:54:23 by msumon           ###   ########.fr       */
+/*   Updated: 2023/11/28 17:46:04 by msumon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10000000
+#  define BUFFER_SIZE 10
 # endif
 
 # include "../ft_printf/ft_printf.h"
-# include "../libft/libft.h"
+# include "../libft.h"
 
 # include <fcntl.h>
 # include <stdio.h>

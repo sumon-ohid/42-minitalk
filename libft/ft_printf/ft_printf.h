@@ -6,7 +6,7 @@
 /*   By: msumon <msumon@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 09:03:43 by msumon            #+#    #+#             */
-/*   Updated: 2023/11/16 21:54:30 by msumon           ###   ########.fr       */
+/*   Updated: 2023/11/28 17:45:54 by msumon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_PRINTF_H
 
 # include "../get_next_line/get_next_line.h"
-# include "../libft/libft.h"
+# include "../libft.h"
 
 # include <stdarg.h>
 # include <stdio.h>
