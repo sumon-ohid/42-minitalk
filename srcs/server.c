@@ -6,7 +6,7 @@
 /*   By: msumon <msumon@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:05:07 by msumon            #+#    #+#             */
-/*   Updated: 2023/11/28 14:05:08 by msumon           ###   ########.fr       */
+/*   Updated: 2023/11/28 15:01:54 by msumon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	pid = getpid();
-	ft_printf("%d\n", pid);
+	ft_printf("PID : %d\n", pid);
 	while (argc == 1)
 	{
 		signal(SIGUSR1, ft_btoa);

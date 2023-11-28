@@ -6,7 +6,7 @@
 /*   By: msumon <msumon@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:03:53 by msumon            #+#    #+#             */
-/*   Updated: 2023/11/28 14:40:14 by msumon           ###   ########.fr       */
+/*   Updated: 2023/11/28 15:01:07 by msumon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		ft_printf("Error\n");
+		ft_printf("Error!!\n Need 2 arguments.\n 1st: PID\n 2nd: String");
 		return (1);
 	}
 	return (0);
