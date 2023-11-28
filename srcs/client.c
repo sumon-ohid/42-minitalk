@@ -6,7 +6,7 @@
 /*   By: msumon <msumon@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:03:53 by msumon            #+#    #+#             */
-/*   Updated: 2023/11/28 17:52:46 by msumon           ###   ########.fr       */
+/*   Updated: 2023/11/28 18:25:40 by msumon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_atob(int pid, char c)
 	bit = 0;
 	while (bit < 8)
 	{
-		if ((c & (0x01 << bit)))
+		if ((c & (1 << bit)))
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
@@ -42,10 +42,12 @@ int	main(int argc, char **argv)
 			ft_atob(pid, argv[2][i]);
 			i++;
 		}
+		ft_atob(pid, '\n');
 	}
 	else
 	{
-		ft_printf("Error!!\n Need 2 arguments.\n 1st: PID\n 2nd: String");
+		ft_printf("Error!!\nNeed 2 arguments.\n");
+		ft_printf("HINT: ./client [PID] [Message]\n");
 		return (1);
 	}
 	return (0);

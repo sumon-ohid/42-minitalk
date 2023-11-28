@@ -6,7 +6,7 @@
 #    By: msumon <msumon@student.42vienna.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 20:34:16 by sumon             #+#    #+#              #
-#    Updated: 2023/11/28 14:51:56 by msumon           ###   ########.fr        #
+#    Updated: 2023/11/28 18:02:30 by msumon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ GREEN		= $(shell tput -Txterm setaf 2)
 BLUE		= $(shell tput -Txterm setaf 4)
 PURPLE		= $(shell tput -Txterm setaf 5)
 
-all: libft gnl ftprintf server client compile
+all: libft gnl ftprintf compile
 
 libft:
 	@echo ${Q}${NL}${GREEN}======== libft ========${NC}${Q}
@@ -40,25 +40,17 @@ ftprintf:
 	@echo ${Q}${NL}${GREEN}======== ft_printf ========${NC}${Q}
 	@$(MAKE) -C $(FTPRINTF) all
 
-server:
-	@echo ${Q}${NL}${GREEN}======== Server ========${NC}${Q}
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAMES)
-
-client:
-	@echo ${Q}${NL}${GREEN}======== Client ========${NC}${Q}
-	$(CC) $(CFLAGS) $(OBJC) -o $(NAMEC)
-
 %.o : %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 compile: $(NAMES) $(NAMEC)
 
 $(NAMES): libft gnl ftprintf
-	@echo ${Q}${NL}${BLUE}======== Server Compiled! ========${NC}${Q}
+	@echo ${Q}${NL}${GREEN}======== Server Compiled! ========${NC}${Q}
 	$(CC) $(CFLAGS) $(OBJS) $(HEADERS) $(LIBFT)libft.a $(GNL)gnl.a $(FTPRINTF)libftprintf.a -o $(NAMES)
 
 $(NAMEC): libft gnl ftprintf
-	@echo ${Q}${NL}${BLUE}======== Client Compiled! ========${NC}${Q}
+	@echo ${Q}${NL}${GREEN}======== Client Compiled! ========${NC}${Q}
 	$(CC) $(CFLAGS) $(OBJC) $(HEADERS) $(LIBFT)libft.a $(GNL)gnl.a $(FTPRINTF)libftprintf.a -o $(NAMEC)
 
 clean:
@@ -79,4 +71,5 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all server client libft gnl ftprintf compile clean fclean re
+.PHONY: all libft gnl ftprintf compile clean fclean re
+.SILENT:
