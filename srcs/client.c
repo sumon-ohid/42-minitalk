@@ -6,7 +6,7 @@
 /*   By: msumon <msumon@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:03:53 by msumon            #+#    #+#             */
-/*   Updated: 2023/11/28 18:25:40 by msumon           ###   ########.fr       */
+/*   Updated: 2023/11/29 12:01:09 by msumon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,22 @@ void	ft_atob(int pid, char c)
 	}
 }
 
+void	pid_check(char *str)
+{
+	int	j;
+
+	j = 0;
+	while (str[j] != '\0')
+	{
+		if (!ft_isdigit(str[j]))
+		{
+			printf("Error!!\nPID should only contain digits.\n");
+			return ;
+		}
+		j++;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	int	pid;
@@ -36,6 +52,7 @@ int	main(int argc, char **argv)
 	i = 0;
 	if (argc == 3)
 	{
+		pid_check(argv[1]);
 		pid = ft_atoi(argv[1]);
 		while (argv[2][i] != '\0')
 		{
