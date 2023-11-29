@@ -6,7 +6,7 @@
 /*   By: msumon <msumon@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:03:53 by msumon            #+#    #+#             */
-/*   Updated: 2023/11/29 12:02:45 by msumon           ###   ########.fr       */
+/*   Updated: 2023/11/29 12:41:40 by msumon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	pid_check(char *str)
 	{
 		if (!ft_isdigit(str[j]))
 		{
-			printf("Error!!\nPID should only contain digits.\n");
+			ft_printf("Error!!\nPID should only contain digits.\n");
 			exit(1);
 		}
 		j++;
