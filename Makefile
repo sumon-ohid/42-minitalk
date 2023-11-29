@@ -6,7 +6,7 @@
 #    By: msumon <msumon@student.42vienna.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 20:34:16 by sumon             #+#    #+#              #
-#    Updated: 2023/11/28 18:02:30 by msumon           ###   ########.fr        #
+#    Updated: 2023/11/29 10:05:33 by msumon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,9 @@ CFLAGS		= -Wall -Werror -Wextra
 LIBFT		= ./libft/
 GNL			= ./libft/get_next_line/
 FTPRINTF	= ./libft/ft_printf/
-HEADERS		= -I libft -I get_next_line -I ft_printf -I includes
 
-# Color codes
 GREEN		= $(shell tput -Txterm setaf 2)
 BLUE		= $(shell tput -Txterm setaf 4)
-PURPLE		= $(shell tput -Txterm setaf 5)
 
 all: libft gnl ftprintf compile
 
@@ -47,11 +44,11 @@ compile: $(NAMES) $(NAMEC)
 
 $(NAMES): libft gnl ftprintf
 	@echo ${Q}${NL}${GREEN}======== Server Compiled! ========${NC}${Q}
-	$(CC) $(CFLAGS) $(OBJS) $(HEADERS) $(LIBFT)libft.a $(GNL)gnl.a $(FTPRINTF)libftprintf.a -o $(NAMES)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT)libft.a $(GNL)gnl.a $(FTPRINTF)libftprintf.a -o $(NAMES)
 
 $(NAMEC): libft gnl ftprintf
 	@echo ${Q}${NL}${GREEN}======== Client Compiled! ========${NC}${Q}
-	$(CC) $(CFLAGS) $(OBJC) $(HEADERS) $(LIBFT)libft.a $(GNL)gnl.a $(FTPRINTF)libftprintf.a -o $(NAMEC)
+	$(CC) $(CFLAGS) $(OBJC) $(LIBFT)libft.a $(GNL)gnl.a $(FTPRINTF)libftprintf.a -o $(NAMEC)
 
 clean:
 	@$(MAKE) -C $(LIBFT) clean

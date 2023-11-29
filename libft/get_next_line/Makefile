@@ -6,7 +6,7 @@
 #    By: msumon <msumon@student.42vienna.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 08:14:24 by msumon            #+#    #+#              #
-#    Updated: 2023/11/16 20:55:02 by msumon           ###   ########.fr        #
+#    Updated: 2023/11/29 09:41:54 by msumon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,3 +36,4 @@ fclean:			clean
 re:				fclean $(NAME)
 
 .PHONY:			all clean fclean re
+.SILENT:
