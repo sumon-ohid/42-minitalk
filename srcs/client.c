@@ -6,7 +6,7 @@
 /*   By: msumon <msumon@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:03:53 by msumon            #+#    #+#             */
-/*   Updated: 2023/11/29 12:01:09 by msumon           ###   ########.fr       */
+/*   Updated: 2023/11/29 12:02:45 by msumon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	pid_check(char *str)
 		if (!ft_isdigit(str[j]))
 		{
 			printf("Error!!\nPID should only contain digits.\n");
-			return ;
+			exit(1);
 		}
 		j++;
 	}
@@ -65,6 +65,7 @@ int	main(int argc, char **argv)
 	{
 		ft_printf("Error!!\nNeed 2 arguments.\n");
 		ft_printf("HINT: ./client [PID] [Message]\n");
+		exit(1);
 		return (1);
 	}
 	return (0);
