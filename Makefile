@@ -6,14 +6,16 @@
 #    By: msumon <msumon@student.42vienna.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 20:34:16 by sumon             #+#    #+#              #
-#    Updated: 2023/11/29 10:05:33 by msumon           ###   ########.fr        #
+#    Updated: 2023/11/29 14:06:46 by msumon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAMEC		= client
 NAMES		= server
-OBJS		= ./srcs/server.c
-OBJC		= ./srcs/client.c
+SRCS		= ./srcs/server.c
+SRCC		= ./srcs/client.c
+OBJS		= ./srcs/server.o
+OBJC		= ./srcs/client.o
 CC			= cc
 CFLAGS		= -Wall -Werror -Wextra
 LIBFT		= ./libft/
@@ -42,20 +44,20 @@ ftprintf:
 
 compile: $(NAMES) $(NAMEC)
 
-$(NAMES): libft gnl ftprintf
+$(NAMES): libft gnl ftprintf $(OBJS)
 	@echo ${Q}${NL}${GREEN}======== Server Compiled! ========${NC}${Q}
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT)libft.a $(GNL)gnl.a $(FTPRINTF)libftprintf.a -o $(NAMES)
+	$(CC) $(CFLAGS) $(SRCS) $(LIBFT)libft.a $(GNL)gnl.a $(FTPRINTF)libftprintf.a -o $(NAMES)
 
-$(NAMEC): libft gnl ftprintf
+$(NAMEC): libft gnl ftprintf $(OBJC)
 	@echo ${Q}${NL}${GREEN}======== Client Compiled! ========${NC}${Q}
-	$(CC) $(CFLAGS) $(OBJC) $(LIBFT)libft.a $(GNL)gnl.a $(FTPRINTF)libftprintf.a -o $(NAMEC)
+	$(CC) $(CFLAGS) $(SRCC) $(LIBFT)libft.a $(GNL)gnl.a $(FTPRINTF)libftprintf.a -o $(NAMEC)
 
 clean:
 	@$(MAKE) -C $(LIBFT) clean
 	@$(MAKE) -C $(FTPRINTF) clean
 	@$(MAKE) -C $(GNL) clean
-	@rm -f $(NAMES)
-	@rm -f $(NAMEC)
+	@rm -f $(OBJC)
+	@rm -f $(OBJS)
 	@echo ${Q}${NC}${BLUE}======== Cleaned! ========${NC}${Q}
 
 fclean: clean

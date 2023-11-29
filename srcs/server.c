@@ -6,11 +6,17 @@
 /*   By: msumon <msumon@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:05:07 by msumon            #+#    #+#             */
-/*   Updated: 2023/11/29 11:39:14 by msumon           ###   ########.fr       */
+/*   Updated: 2023/11/29 14:21:59 by msumon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/minitalk.h"
+
+void	error_msg(char *str)
+{
+	ft_printf("Error!!\n%s", str);
+	exit(1);
+}
 
 void	welcome_text(void)
 {
@@ -40,6 +46,8 @@ void	ft_btoa(int sig)
 		ft_printf("%c", i);
 		bit = 0;
 		i = 0;
+		if (c == '\n')
+			ft_printf("Waiting for signal...\n");
 	}
 }
 
@@ -50,13 +58,14 @@ int	main(int argc, char **argv)
 	(void)argv;
 	if (argc != 1)
 	{
-		ft_printf("Error\nToo many arguments.\n");
+		error_msg("Too many arguments.\n");
 		return (1);
 	}
 	pid = getpid();
 	welcome_text();
 	ft_printf("PID : %d\n", pid);
-	while (argc == 1)
+	ft_printf("Waiting for signal...\n");
+	while (1)
 	{
 		signal(SIGUSR1, ft_btoa);
 		signal(SIGUSR2, ft_btoa);
