@@ -40,5 +40,6 @@ $ ./client "PID" "Your message string"
 ```
 
 By launching it, this will show "Your message string" on the server window.
-##NOTE
+
+## NOTE
 Don't use it for the 42 school project. It can break for certain cases.
